@@ -19,10 +19,10 @@ const Title = styled.h1`
 
 function App() {
   const [todos, setTodos] = useState([])
-  const [filter, setFilter] = useState('all') // 'all', 'active', 'completed'
+  const [filter, setFilter] = useState('all') 
   const isFirstRender = useRef(true)
 
-  // Carregar tarefas salvas ao abrir o app
+
   useEffect(() => {
     const savedTodos = localStorage.getItem("my-todos")
     if (savedTodos) {
@@ -30,7 +30,6 @@ function App() {
     }
   }, [])
 
-  // Salvar no localStorage, mas ignorar o primeiro render
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false
